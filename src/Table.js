@@ -22,11 +22,14 @@ import { jsPDF } from "jspdf";
 import "jspdf-autotable";
 import { exportDataGrid as exportDataGridToPdf } from "devextreme/pdf_exporter";
 import { Pagination } from "antd";
+import { WindMillLoading } from "react-loadingg";
+import Backdrop from "@mui/material/Backdrop";
 
 const Table = ({ fetchGridData, columns, pageSizes }) => {
   const [data, setData] = useState([]);
   const [currentPage, setCurrentPage] = useState(0);
   const [pageSize, setPageSize] = useState(10);
+  const [loading, setLoading] = useState(false);
   let dataGridRef = createRef();
 
   const customizeSummary = (data) => {
@@ -38,8 +41,10 @@ const Table = ({ fetchGridData, columns, pageSizes }) => {
 
   useEffect(() => {
     (async () => {
+      setLoading(true);
       const data = await fetchGridData(currentPage, pageSize);
       setData(data);
+      setLoading(false);
     })();
   }, [currentPage, pageSize]);
 
@@ -116,6 +121,14 @@ const Table = ({ fetchGridData, columns, pageSizes }) => {
         <Grouping autoExpandAll={false} />
         <ColumnChooser enabled={true} mode="select" />
         <ColumnFixing enabled={true} />
+        {loading && (
+          <Backdrop
+            sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}
+            open={true}
+          >
+            <WindMillLoading />
+          </Backdrop>
+        )}
         <Summary>
           {summaryColumns.map((item) => (
             <TotalItem
