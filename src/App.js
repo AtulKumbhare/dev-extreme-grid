@@ -6,7 +6,9 @@ import "antd/dist/antd.css";
 import "./App.css";
 import DevExTable from "./Table";
 
-const authToken = localStorage.getItem("accessToken");
+const authToken =
+  localStorage.getItem("accessToken") ||
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJmNDhlMjRkNy1hNTFkLTRmNDktYjA5Ni02YzRjMjYwOGIyNmUiLCJMb2dpbl9Vc2VyX0lkIjoiMTM5MDgiLCJQZXJzb25fSWQiOiIxODgiLCJleHAiOjE2NDY5ODU0NDMsImlzcyI6Imh0dHA6Ly9iaW9mdWVsY2lyY2xlLmNvbSIsImF1ZCI6Imh0dHA6Ly9iaW9mdWVsY2lyY2xlLmNvbSJ9.lHzjrZWruVhN1oZjhHit65UQLqKVZeER4DvQotQTXLg";
 
 const App = () => {
   const fetchGridData = async (currentPage, pageSize) => {
