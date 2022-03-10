@@ -1,38 +1,117 @@
-.App {
-  text-align: center;
+.dx-header-row {
+  background-color: #fafafa !important;
+  font-weight: bold !important;
+  color: rgba(0, 0, 0, 0.85) !important;
+}
+.dx-header-row .dx-datagrid-text-content {
+  font-weight: bold !important;
+  color: rgba(0, 0, 0, 0.85) !important;
+}
+.dx-toolbar {
+  margin-top: 10px;
+  padding-right: 10px;
+}
+.MuiToolbar-root {
+  min-height: 50px !important;
+}
+.MuiTableHead-root {
+  position: sticky;
+  top: 0;
+  background-color: #fafafa;
+}
+.TableContainer-root {
+  height: calc(100vh - 103px) !important;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.Pager-pager {
+  padding: 2px 12px !important;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+#gridContainer {
+  height: calc(100vh - 56px);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.options {
+  padding: 20px;
+  margin-top: 20px;
+  background-color: rgba(191, 191, 191, 0.15);
+}
+
+.caption {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.option {
+  margin-top: 10px;
+}
+
+.option > span {
+  margin-right: 10px;
+}
+
+.option > .dx-selectbox {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.green {
+  color: green !important;
+}
+.red {
+  color: red !important;
+}
+.dx-toolbar {
+  margin: 0 !important;
+}
+
+.ant-pagination {
+  padding: 12px;
+  text-align: right;
+}
+.ant-pagination-item,
+.ant-pagination-prev .ant-pagination-item-link,
+.ant-pagination-next .ant-pagination-item-link {
+  border-radius: 50% !important;
+}
+.ant-pagination-prev .ant-pagination-item-link,
+.ant-pagination-next .ant-pagination-item-link {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
-
-.App-link {
-  color: #61dafb;
+.ant-pagination-next:hover .ant-pagination-item-link,
+.ant-pagination-prev:hover .ant-pagination-item-link,
+.ant-pagination-item:hover,
+.ant-select:hover .ant-select-selector,
+.ant-select:active .ant-select-selector {
+  border-color: #ff5722 !important;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.ant-pagination-item:hover a,
+.ant-pagination-next:hover .anticon,
+.ant-pagination-prev:hover .anticon {
+  color: #ff5722;
+}
+.ant-select-item-option-selected:not(.ant-select-item-option-disabled) {
+  background-color: #fad3c8cb;
+}
+.ant-pagination-item-active {
+  background-color: #ff5722;
+  border-radius: 4px;
+  color: #fff;
+  border-color: #ff5722;
+  border-radius: 50%;
+}
+.ant-pagination-item-active a {
+  color: #fff;
+}
+.ant-pagination-item-active:hover {
+  border-color: #ff5722;
+  color: #fff;
+}
+.ant-pagination-item-active:hover a {
+  color: #fff;
+}
+.ant-pagination-item-link-icon {
+  color: #ff5722 !important;
 }
