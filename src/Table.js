@@ -46,7 +46,7 @@ const Table = ({ fetchGridData, columns, pageSizes }) => {
       setData(data);
       setLoading(false);
     })();
-  }, [currentPage, pageSize]);
+  }, [currentPage, pageSize, fetchGridData]);
 
   const summaryColumns = [];
   const columnData = columns.map((column) => {
